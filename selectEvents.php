@@ -1,17 +1,18 @@
 <?php
-include "dbConnect.php";
 
-try{
-    $sql = "SELECT events_id, events_name, TIME_FORMAT(events_time, '%h: %i %p') as events_time, DATE_FORMAT(events_date, '%M %d, %Y') as events_date FROM wdv341_events";   //sql command as a string variable formats time and date in sql
-    $stmt = $conn->prepare($sql);           // prepare the statement
-    $stmt->execute();                       // the result Object is still in database format not directly readable
-}
-catch(PDOException $e){
-    echo "Errors: " . $e->getMessage();
-}
+    include "dbConnect.php";
 
-    
+    try{
+        $sql = "SELECT events_id, events_name, TIME_FORMAT(events_time, '%h: %i %p') as events_time, DATE_FORMAT(events_date, '%M %d, %Y') as events_date FROM wdv341_events";   //sql command as a string variable formats time and date in sql
+        $stmt = $conn->prepare($sql);           // prepare the statement
+        $stmt->execute();                       // the result Object is still in database format not directly readable
+    }
+    catch(PDOException $e){
+        echo "Errors: " . $e->getMessage();
+    }
+   
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
