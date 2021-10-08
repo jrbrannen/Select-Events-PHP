@@ -83,7 +83,7 @@ catch(PDOException $e){
             
             <footer>
 
-                <p>
+                <p class="text-center">
                     <a target="_blank"href="https://github.com/jrbrannen/Select-Events-PHP.git">GitHub Repo Link</a>
                 </p>
                 
